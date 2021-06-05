@@ -1,0 +1,12 @@
+.app-panel-container {
+    display: flex;
+}
+.description {
+    flex: 1;
+}
+.description img {
+    float: left;
+    max-width: 60%;
+    padding-right: 15px;
+}
+

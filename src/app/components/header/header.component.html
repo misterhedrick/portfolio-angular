@@ -1,0 +1,11 @@
+<mat-toolbar class="sticky navbar transparentNav" [ngClass]="{'transparentNav': transparentNav, 'whiteNav': !transparentNav}" (scroll)="onWindowScroll();">
+    <mat-toolbar-row>
+        <span *ngIf="breakpointService.large || breakpointService.xlarge">DANIEL HEDRICK</span>
+        <span *ngIf="breakpointService.large || breakpointService.xlarge" class="spacer"></span>
+        <span class="nav-links" (click)="scrollTo('intro')">Home</span>
+        <span class="nav-links" (click)="scrollTo('about-me')">Me</span>
+        <span class="nav-links" (click)="scrollTo('languages')">Languages</span>
+        <span class="nav-links" (click)="scrollTo('achievements')">Achievements</span>
+        <span class="nav-links" (click)="scrollTo('experience')">Experience</span>
+    </mat-toolbar-row>
+  </mat-toolbar>

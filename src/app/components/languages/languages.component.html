@@ -1,0 +1,29 @@
+<div class="app-panel photo-bg">
+  <div class="app-panel-container">
+    <h1>I Can Code In</h1>
+    <div class="list-container">
+      <div
+        [ngClass]="{
+          'col-1':
+            breakpointService.handset ||
+            breakpointService.xsmall ||
+            breakpointService.small,
+          'mylist':
+            breakpointService.medium ||
+            breakpointService.large ||
+            breakpointService.xlarge
+        }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="pill" *ngFor="let l of dataService.myLanguages" cdkDrag>
+          <div class="pill-bg">
+            <div class="pill-container">
+              <h2>{{ l.value }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="app-panel grey-bg">
+  <div class="app-panel-container">
+    <div class="description">
+      <h1 *ngIf="breakpointService.handset || breakpointService.xsmall || breakpointService.small || breakpointService.medium">About Me</h1>
+      <img src="../../../assets/laptop-background.jpg" />
+      <h1 *ngIf="breakpointService.large || breakpointService.xlarge">About Me</h1>
+      <h4>
+        If you are looking for someone who is going to sit in meetings or in an
+        interview and talk technical terms then you've come to the wrong place.
+        If you are looking for a hard working engineer with a thirst to learn
+        more keep reading. I built this digital resume / portfolio to
+        demonstrate some of the skills I know. The back end API is built with
+        Spring Boot providing some basic rest endpoints and the front end is
+        built using Angular 12. Both are hosted on
+        <a href="https://www.netlify.com/">Netlify</a>. Angular Universal is
+        used to load some of the resources server side to speed things up as
+        well as the service worker that is used to control caching. The service
+        worker is also used to turn this bad boy into a Progressive Web App. In
+        case you are wondering about a specific skill you need and do not see
+        please just shoot me a message at
+        <a href="mailto: misterhedrick@gmail.com">misterhedrick@gmail.com</a>
+        and I will be glad to take a look.
+      </h4>
+    </div>
+  </div>
+</div>

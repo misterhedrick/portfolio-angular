@@ -1,0 +1,28 @@
+mat-toolbar-row fa-icon{
+  cursor: pointer;
+}
+  .spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar-row button{
+    margin: 0 10px;
+  }
+  .nav-links {
+    margin: 0 10px;
+  }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: #000000 2px solid;
+  }
+  .transparentNav {
+    background-color: transparent;
+    color: #ffffff;
+  }
+  .whiteNav {
+    //background-color: rgba($color: whitesmoke, $alpha: .85);
+    background-color: whitesmoke;
+    color: #333333;
+  }

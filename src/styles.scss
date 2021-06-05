@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+$angular-primary: mat-palette($mat-blue, 500, 100, 900);
+$angular-accent: mat-palette($mat-pink, A200, A100, A400);
+$angular-warn: mat-palette($mat-red);
+$angular-default-theme: mat-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+@include angular-material-theme($angular-default-theme);
+$angular-dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+.darkMode {
+  @include angular-material-color($angular-dark-theme);
+}
+@-ms-viewport {
+  width: device-width;
+}
+html,
+body {
+  //   height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+app-intro {
+  height: 100vh;
+}
+h1 {
+  font-size: 48px !important;
+  font-weight: 600 !important;
+  line-height: normal !important;
+}
+.app-panel {
+  min-height: 30vh;
+  padding: 5rem 0;
+}
+@media (max-width: 959px) {
+  .app-panel-container {
+    width: 95%;
+    margin: auto;
+  }
+  .app-panel-container h1 {
+    text-align: center;
+  }
+  .photo-bg {
+    background: url("./assets/laptop-background.jpg") no-repeat center center
+      scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+@media (min-width: 960px) {
+  .app-panel-container {
+    width: 70%;
+    margin: auto;
+  }
+  .photo-bg {
+    background: url("./assets/laptop-background.jpg") no-repeat center center
+      fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+app-about-me .app-panel-container {
+  display: flex;
+}
+.grey-bg {
+  background-color: whitesmoke;
+}
+.photo-bg > * {
+  color: #ffffff;
+}
+.list-container {
+  display: flex;
+}
+.mylist {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.col-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mylist > div {
+  width: 50%;
+}
+.pill {
+  color: #333333;
+  margin: 3px 0;
+}
+.pill-bg {
+  background-color: lightslategray;
+  border-radius: 25px;
+  margin: 5px 10px;
+  height: 90%;
+}
+.pill-container {
+  width: 90%;
+  padding: 5px 1rem;
+}

@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar-row {
+    display: flex; justify-content: space-evenly;
+  }
+  mat-toolbar-row fa-icon{
+    cursor: pointer;
+  }
+  .sticky {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: #000000 2px solid;
+  }
