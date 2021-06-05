@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { Achievement } from '../models/achievement';
 import { Experience } from '../models/experience';
 import { Language } from '../models/language';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  protected REST_URL: string = 'http://localhost:8080';
   myAchievements: Achievement[] = [];
   myExperience: Experience[] = [];
   myLanguages: Language[] = [];
@@ -24,7 +24,7 @@ export class DataService {
   }
 
   getMyAchievements() : Observable<Achievement[]> {
-    return this.http.get<Achievement[]>(this.REST_URL + '/achievements');
+    return this.http.get<Achievement[]>(environment.API_URL + 'achievements');
   }
 
   getMyExperience() {
@@ -77,6 +77,6 @@ export class DataService {
   }
 
   getMyLanguages() : Observable<Language[]> {
-    return this.http.get<Language[]>(this.REST_URL + '/languages');
+    return this.http.get<Language[]>(environment.API_URL + 'languages');
   }
 }
