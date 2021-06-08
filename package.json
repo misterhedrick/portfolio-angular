@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "phone": "ng serve --host 0.0.0.0",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
