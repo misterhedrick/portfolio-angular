@@ -4,6 +4,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointService } from './services/breakpoint.service';
 //import { DataService } from './services/data.service';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { DataService } from './services/data.service';
 declare var $: any;
 @Component({
   selector: 'app-root',
@@ -18,7 +19,17 @@ export class AppComponent {
     public breakpointService: BreakpointService,
     private breakpointObserver: BreakpointObserver,
     private overlay: OverlayContainer,
+    private dataService: DataService
     ){
+      this.dataService.getMyAchievements().subscribe(data => {
+        this.dataService.myAchievements = data;
+      });
+      this.dataService.getMyExperience().subscribe(data => {
+        this.dataService.myExperience = data;
+      });
+      this.dataService.getMyLanguages().subscribe(data => {
+        this.dataService.myLanguages = data;
+      });
    // this.dataService.getNewProfileExerciseData();
     this.breakpointObserver.observe([
       Breakpoints.Handset,

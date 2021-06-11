@@ -14,15 +14,7 @@ export class DataService {
   myExperience: Experience[] = [];
   myLanguages: Language[] = [];
   constructor(private http: HttpClient) {
-    this.getMyAchievements().subscribe(data => {
-      this.myAchievements = data;
-    });
-    this.getMyExperience().subscribe(data => {
-      this.myExperience = data;
-    });
-    this.getMyLanguages().subscribe(data => {
-      this.myLanguages = data;
-    });
+    
   }
 
   getMyAchievements() : Observable<Achievement[]> {
