@@ -32,7 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AboutMeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
