@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+// Angular Material Theme Setup
 @import "~@angular/material/theming";
 @include mat-core();
 $angular-primary: mat-palette($mat-blue, 500, 100, 900);
@@ -23,22 +23,63 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
-
-app-intro {
-  height: 100vh;
-}
+//h1 Titles in each section
 .section-title {
   font-size: 48px !important;
   font-weight: 600 !important;
   line-height: normal !important;
 }
-.photo-bg .section-title {
-  color: #ffffff;
-}
+// Making sure panels are at least 30% of the View Height
 .app-panel {
   min-height: 30vh;
   padding: 5rem 0;
 }
+.grey-bg {
+  background-color: whitesmoke;
+}
+//Generic makes all font white when using .photo-bg class
+.photo-bg > * {
+  color: #ffffff;
+}
+
+.list-container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+.col-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col-wrap > div {
+  width: 50%;
+}
+
+.col-no-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+//Global Pill Styles
+.pill {
+  color: #333333;
+  margin: 3px 0;
+}
+.pill-bg {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  margin: 5px 10px;
+  height: 90%;
+}
+.pill-container {
+  width: 90%;
+  padding: 5px 1rem;
+}
+
+// Mobile Specific Styles
 @media (max-width: 959px) {
   .app-panel-container {
     width: 95%;
@@ -56,6 +97,8 @@ app-intro {
     background-size: cover;
   }
 }
+
+//Desktop Specific Styles
 @media (min-width: 960px) {
   .app-panel-container {
     width: 70%;
@@ -69,45 +112,4 @@ app-intro {
     -o-background-size: cover;
     background-size: cover;
   }
-}
-
-.grey-bg {
-  background-color: whitesmoke;
-}
-.photo-bg > * {
-  color: #ffffff;
-}
-.list-container {
-  display: flex;
-  width: 100%;
-  margin: 0;
-}
-.col-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.col-no-wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.col-wrap > div {
-  width: 50%;
-}
-.pill {
-  color: #333333;
-  margin: 3px 0;
-}
-
-.pill-bg {
-  background-color: whitesmoke;
-  border-radius: 25px;
-  margin: 5px 10px;
-  height: 90%;
-}
-
-.pill-container {
-  width: 90%;
-  padding: 5px 1rem;
 }
