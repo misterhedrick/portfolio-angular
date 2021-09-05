@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // API_URL: 'http://localhost:8080/'
-  API_URL: 'https://daniel-portfolio-api.herokuapp.com/',
+  API_URL: 'http://localhost:8080/',
+  // API_URL: 'https://daniel-portfolio-api.herokuapp.com/',
 };
 
 /*

@@ -14,24 +14,12 @@ $angular-default-theme: mat-light-theme(
   )
 );
 @include angular-material-theme($angular-default-theme);
-$angular-dark-theme: mat-dark-theme(
-  (
-    color: (
-      primary: $angular-primary,
-      accent: $angular-accent,
-      warn: $angular-warn,
-    ),
-  )
-);
-.darkMode {
-  @include angular-material-color($angular-dark-theme);
-}
+
 @-ms-viewport {
   width: device-width;
 }
 html,
 body {
-  //   height: 100%;
   box-sizing: border-box;
   margin: 0;
 }
@@ -39,10 +27,13 @@ body {
 app-intro {
   height: 100vh;
 }
-h1 {
+.section-title {
   font-size: 48px !important;
   font-weight: 600 !important;
   line-height: normal !important;
+}
+.photo-bg .section-title {
+  color: #ffffff;
 }
 .app-panel {
   min-height: 30vh;
@@ -53,7 +44,7 @@ h1 {
     width: 95%;
     margin: auto;
   }
-  .app-panel-container h1 {
+  .app-panel-container .section-title {
     text-align: center;
   }
   .photo-bg {
@@ -80,9 +71,6 @@ h1 {
   }
 }
 
-app-about-me .app-panel-container {
-  display: flex;
-}
 .grey-bg {
   background-color: whitesmoke;
 }
@@ -91,30 +79,34 @@ app-about-me .app-panel-container {
 }
 .list-container {
   display: flex;
+  width: 100%;
+  margin: 0;
 }
-.mylist {
+.col-wrap {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.col-1 {
+.col-no-wrap {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.mylist > div {
+.col-wrap > div {
   width: 50%;
 }
 .pill {
   color: #333333;
   margin: 3px 0;
 }
+
 .pill-bg {
-  background-color: lightslategray;
+  background-color: whitesmoke;
   border-radius: 25px;
   margin: 5px 10px;
   height: 90%;
 }
+
 .pill-container {
   width: 90%;
   padding: 5px 1rem;

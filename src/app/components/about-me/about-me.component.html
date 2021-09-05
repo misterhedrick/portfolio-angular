@@ -1,7 +1,8 @@
 <div class="app-panel grey-bg">
   <div class="app-panel-container">
-    <div class="description">
+    <div class="about-me">
       <h1
+        class="section-title"
         *ngIf="
           breakpointService.handset ||
           breakpointService.xsmall ||
@@ -11,8 +12,15 @@
       >
         About Me
       </h1>
-      <img src="../../../assets/laptop-background.jpg" alt="Daniel Hedrick" />
-      <h1 *ngIf="breakpointService.large || breakpointService.xlarge">
+      <img
+        class="about-me-photo"
+        src="../../../assets/laptop-background.jpg"
+        alt="Daniel Hedrick"
+      />
+      <h1
+        class="section-title"
+        *ngIf="breakpointService.large || breakpointService.xlarge"
+      >
         About Me
       </h1>
       <h4>

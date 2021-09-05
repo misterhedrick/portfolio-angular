@@ -1,11 +1,11 @@
 .achievement {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
 }
-fa-icon {
-    margin-top: 5px;
+.achievement-icon {
+  margin-top: 5px;
 }
-h2 {
-    margin: 0 0 0 10px;
+.achievement-description {
+  margin: 0 0 0 10px;
 }

@@ -1,14 +1,14 @@
 <div class="app-panel grey-bg">
   <div class="app-panel-container">
-    <h1>A Few Things I've Done</h1>
+    <h1 class="section-title">A Few Things I've Done</h1>
     <div class="list-container">
       <div
         [ngClass]="{
-          'col-1':
+          'col-no-wrap':
             breakpointService.handset ||
             breakpointService.xsmall ||
             breakpointService.small,
-          mylist:
+          'col-wrap':
             breakpointService.medium ||
             breakpointService.large ||
             breakpointService.xlarge
@@ -16,8 +16,12 @@
       >
         <div *ngFor="let a of dataService.myAchievements">
           <div class="achievement">
-            <fa-icon [icon]="faCircle" size="xs"></fa-icon>
-            <h2>{{ a.description }}</h2>
+            <fa-icon
+              class="achievement-icon"
+              [icon]="faCircle"
+              size="xs"
+            ></fa-icon>
+            <h2 class="achievement-description">{{ a.description }}</h2>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Achievement } from '../models/achievement';
 import { Experience } from '../models/experience';
 import { Language } from '../models/language';
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,19 +13,22 @@ export class DataService {
   myAchievements: Achievement[] = [];
   myExperience: Experience[] = [];
   myLanguages: Language[] = [];
-  constructor(private http: HttpClient) {
-    
-  }
+  apiURL = environment.API_URL;
+  constructor(private http: HttpClient) {}
 
-  getMyAchievements() : Observable<Achievement[]> {
-    return this.http.get<Achievement[]>(environment.API_URL + 'achievements');
+  getMyAchievements(): Observable<Achievement[]> {
+    return this.http.get<Achievement[]>(this.apiURL + 'achievements');
   }
 
   getMyExperience() {
-    return this.http.get<Experience[]>(environment.API_URL + 'experiences');
+    return this.http.get<Experience[]>(this.apiURL + 'experiences');
   }
 
-  getMyLanguages() : Observable<Language[]> {
-    return this.http.get<Language[]>(environment.API_URL + 'languages');
+  getMyLanguages(): Observable<Language[]> {
+    return this.http.get<Language[]>(this.apiURL + 'languages');
+  }
+
+  setApiURL(url: string) {
+    this.apiURL = url;
   }
 }
