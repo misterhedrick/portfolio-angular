@@ -1,36 +1,16 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, HostBinding } from '@angular/core';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component } from '@angular/core';
 import { BreakpointService } from './services/breakpoint.service';
-//import { DataService } from './services/data.service';
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { DataService } from './services/data.service';
-declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Portfolio';
-
   constructor(
-    // private dataService: DataService,
     public breakpointService: BreakpointService,
-    private breakpointObserver: BreakpointObserver,
-    private overlay: OverlayContainer,
-    private dataService: DataService
+    private breakpointObserver: BreakpointObserver
   ) {
-    this.dataService.getMyAchievements().subscribe((data) => {
-      this.dataService.myAchievements = data;
-    });
-    this.dataService.getMyExperience().subscribe((data) => {
-      this.dataService.myExperience = data;
-    });
-    this.dataService.getMyLanguages().subscribe((data) => {
-      this.dataService.myLanguages = data;
-    });
-    // this.dataService.getNewProfileExerciseData();
     this.breakpointObserver
       .observe([
         Breakpoints.Handset,
@@ -91,10 +71,4 @@ export class AppComponent {
         }
       });
   }
-  //   ngOnInit(): void {
-  //     $(document).ready(function() {
-  //       const doc = document.documentElement
-  //       doc.style.setProperty('--vh', window.innerHeight/100 + 'px')
-  //  });
-  //   }
 }
