@@ -7,6 +7,7 @@ import { BreakpointService } from './services/breakpoint.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title = 'Portfolio';
   constructor(
     public breakpointService: BreakpointService,
     private breakpointObserver: BreakpointObserver

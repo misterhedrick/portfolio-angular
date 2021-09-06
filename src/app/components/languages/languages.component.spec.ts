@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LanguagesComponent } from './languages.component';
-import { DataService } from 'src/app/services/data.service';
+import { LanguagesService } from './languages.service';
 
 describe('LanguagesComponent', () => {
   let component: LanguagesComponent;
@@ -16,7 +16,7 @@ describe('LanguagesComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [DataService],
+      providers: [LanguagesService],
     })
   );
 
