@@ -24,6 +24,7 @@ body {
   margin: 0;
 }
 //h1 Titles in each section
+// using !important to overwrite material styles
 .section-title {
   font-size: 48px !important;
   font-weight: 600 !important;
@@ -47,12 +48,13 @@ body {
   width: 100%;
   margin: 0;
 }
+// makes lists wrap
 .col-wrap {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-
+// makes the lists render 2 wide
 .col-wrap > div {
   width: 50%;
 }
@@ -88,6 +90,7 @@ body {
   .app-panel-container .section-title {
     text-align: center;
   }
+
   .photo-bg {
     background: url("./assets/laptop-background.jpg") no-repeat center center
       scroll;
@@ -104,6 +107,7 @@ body {
     width: 70%;
     margin: auto;
   }
+  // fixed background image creates a paralax effect when scrolling
   .photo-bg {
     background: url("./assets/laptop-background.jpg") no-repeat center center
       fixed;

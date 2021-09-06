@@ -11,12 +11,14 @@
   -webkit-text-stroke: 2px black; /* width and color */
   text-align: center;
 }
+// using !important to overwrite material styles
 @media (min-width: 992px) {
   .section-title {
     font-size: 6rem !important;
   }
 }
 
+// using !important to overwrite material styles
 @media (max-width: 991px) {
   .section-title {
     font-size: 3rem !important;
