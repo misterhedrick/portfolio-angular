@@ -14,7 +14,7 @@
             breakpointService.xlarge
         }"
       >
-        <div *ngFor="let a of dataService.myAchievements">
+        <div *ngFor="let a of achievementsService.myAchievements">
           <div class="achievement">
             <fa-icon [icon]="faCircle" size="xs"></fa-icon>
             <h2>{{ a.description }}</h2>
