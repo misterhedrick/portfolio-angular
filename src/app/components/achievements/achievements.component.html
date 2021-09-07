@@ -14,7 +14,7 @@
             breakpointService.xlarge
         }"
       >
-        <div *ngFor="let a of achievementsService.myAchievements">
+        <div *ngFor="let a of (myAchievements | async).achievements">
           <div class="achievement">
             <fa-icon
               class="achievement-icon"

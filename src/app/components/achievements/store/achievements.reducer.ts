@@ -1,17 +1,21 @@
-import { Action } from '@ngrx/store';
-import { Achievement } from 'src/app/models/achievement';
-import { GET_ACHIEVEMENTS } from './achievements.actions';
+import * as AchievementsActions from './achievements.actions';
+import { Achievement } from '../../../models/achievement';
 
 const initialState = {
-  myAchievements: [],
+  achievements: ['my achievement', 'second one'],
 };
 
-export function achievementsReducer(state = initialState, action: Action) {
+export function achievementsReducer(
+  state = initialState,
+  action: AchievementsActions.AddAchievements
+) {
   switch (action.type) {
-    case GET_ACHIEVEMENTS:
+    case AchievementsActions.ADD_ACHIEVEMENTS:
       return {
         ...state,
-        myAchievements: [...state.myAchievements, action],
+        achievements: [...state.achievements, action.payload],
       };
+    default:
+      return state;
   }
 }
