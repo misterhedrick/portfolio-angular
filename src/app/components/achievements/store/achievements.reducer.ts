@@ -1,8 +1,12 @@
 import * as AchievementsActions from './achievements.actions';
 import { Achievement } from '../../../models/achievement';
 
-const initialState = {
-  achievements: ['my achievement', 'second one'],
+export interface State {
+  achievements: Achievement[];
+}
+
+const initialState: State = {
+  achievements: [],
 };
 
 export function achievementsReducer(
@@ -13,7 +17,7 @@ export function achievementsReducer(
     case AchievementsActions.ADD_ACHIEVEMENTS:
       return {
         ...state,
-        achievements: [...state.achievements, action.payload],
+        achievements: [...state.achievements, ...action.payload],
       };
     default:
       return state;

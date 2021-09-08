@@ -19,7 +19,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StoreModule } from '@ngrx/store';
-import { achievementsReducer } from './components/achievements/store/achievements.reducer';
+import * as fromApp from './store/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AchievementsEffects } from './components/achievements/store/achievements.effects';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,8 @@ import { achievementsReducer } from './components/achievements/store/achievement
     BrowserAnimationsModule,
     LayoutModule,
     DragDropModule,
-    StoreModule.forRoot({
-      myAchievements: achievementsReducer,
-    }),
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AchievementsEffects]),
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   // Register the ServiceWorker as soon as the app is stable

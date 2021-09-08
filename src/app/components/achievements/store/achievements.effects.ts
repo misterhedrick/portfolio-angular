@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Achievement } from 'src/app/models/achievement';
 import { of } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class AchievementsEffects {
   @Effect()
   getAchievements = this.actions$.pipe(
@@ -15,7 +17,7 @@ export class AchievementsEffects {
         .get<Achievement[]>(environment.API_URL + 'achievements')
         .pipe(
           map((data) => {
-            return of(new AchievementsActions.AddAchievements(data));
+            return new AchievementsActions.AddAchievements(data);
           }),
           catchError((error) => {
             return of();
