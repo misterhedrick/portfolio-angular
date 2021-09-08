@@ -15,10 +15,14 @@ import { AchievementsComponent } from './components/achievements/achievements.co
 import { HomeComponent } from './components/home/home.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { StoreModule } from '@ngrx/store';
+import * as fromApp from './store/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AchievementsEffects } from './components/achievements/store/achievements.effects';
+import { ExperienceEffects } from './components/experience/store/experience.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AchievementsComponent,
     HomeComponent,
     IntroComponent,
-    AboutMeComponent
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -40,6 +44,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserAnimationsModule,
     LayoutModule,
     DragDropModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AchievementsEffects, ExperienceEffects]),
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   // Register the ServiceWorker as soon as the app is stable
@@ -48,6 +54,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     // })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

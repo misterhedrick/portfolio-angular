@@ -7,10 +7,9 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class AchievementsService {
-  myAchievements: Achievement[] = [];
   constructor(private http: HttpClient) {}
 
-  getMyAchievements(): Observable<Achievement[]> {
-    return this.http.get<Achievement[]>(environment.API_URL + 'achievements');
-  }
+  // getMyAchievements(): Observable<Achievement[]> {
+  //   return this.http.get<Achievement[]>(environment.API_URL + 'achievements');
+  // }
 }
