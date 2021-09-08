@@ -3,10 +3,10 @@
     <h1 class="section-title">Work Experience</h1>
     <div class="list-container">
       <div class="col-no-wrap">
-        <div class="pill" *ngFor="let e of experienceService.myExperience">
+        <div class="pill" *ngFor="let e of (myExperience | async).experience">
           <div class="pill-bg">
             <div class="pill-container">
-              <h2>{{ e.employer }}</h2>
+              <h2>WOrking{{ e.employer }}</h2>
               <h3>{{ e.title }}: {{ e.dates }}</h3>
               <ul>
                 <li *ngFor="let h of e.highlights">

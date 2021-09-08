@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienceService } from './experience.service';
+import * as fromApp from '../../store/app.reducer';
+import * as ExperienceActions from './store/experience.actions';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Experience } from 'src/app/models/experience';
 
 @Component({
   selector: 'app-experience',
@@ -7,11 +12,18 @@ import { ExperienceService } from './experience.service';
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
-  constructor(public experienceService: ExperienceService) {}
+  myExperience: Observable<{ experience: Experience[] }>;
+  constructor(
+    public experienceService: ExperienceService,
+    private store: Store<fromApp.AppState>
+  ) {}
 
   ngOnInit(): void {
-    this.experienceService.getMyExperience().subscribe((data) => {
-      this.experienceService.myExperience = data;
-    });
+    this.myExperience = this.store.select('experience');
+    this.store.dispatch(new ExperienceActions.GetExperience());
+
+    // this.experienceService.getMyExperience().subscribe((data) => {
+    //   this.experienceService.myExperience = data;
+    // });
   }
 }

@@ -22,7 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AchievementsEffects } from './components/achievements/store/achievements.effects';
-
+import { ExperienceEffects } from './components/experience/store/experience.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,7 @@ import { AchievementsEffects } from './components/achievements/store/achievement
     LayoutModule,
     DragDropModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AchievementsEffects]),
+    EffectsModule.forRoot([AchievementsEffects, ExperienceEffects]),
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   // Register the ServiceWorker as soon as the app is stable
