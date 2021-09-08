@@ -8,8 +8,6 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class LanguagesService {
-  myLanguages: Language[] = [];
-
   constructor(private http: HttpClient) {}
 
   getMyLanguages(): Observable<Language[]> {

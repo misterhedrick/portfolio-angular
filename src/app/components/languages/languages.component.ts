@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { BreakpointService } from 'src/app/services/breakpoint.service';
 import { LanguagesService } from './languages.service';
+import { Language } from 'src/app/models/language';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-languages',
@@ -9,22 +11,23 @@ import { LanguagesService } from './languages.service';
   styleUrls: ['./languages.component.scss'],
 })
 export class LanguagesComponent implements OnInit {
+  myLanguages: Language[];
+  myLanguagesSub = new Subject<Language[]>();
   constructor(
     public languagesService: LanguagesService,
     public breakpointService: BreakpointService
   ) {}
 
   ngOnInit(): void {
+    this.myLanguagesSub.subscribe((data) => {
+      this.myLanguages = data;
+    });
     this.languagesService.getMyLanguages().subscribe((data) => {
-      this.languagesService.myLanguages = data;
+      this.myLanguagesSub.next(data);
     });
   }
   drop(event: CdkDragDrop<string[]>) {
     console.log('moving item');
-    moveItemInArray(
-      this.languagesService.myLanguages,
-      event.previousIndex,
-      event.currentIndex
-    );
+    moveItemInArray(this.myLanguages, event.previousIndex, event.currentIndex);
   }
 }

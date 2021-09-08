@@ -16,11 +16,7 @@
         cdkDropList
         (cdkDropListDropped)="drop($event)"
       >
-        <div
-          class="pill"
-          *ngFor="let l of languagesService.myLanguages"
-          cdkDrag
-        >
+        <div class="pill" *ngFor="let l of myLanguages" cdkDrag>
           <div class="pill-bg">
             <div class="pill-container">
               <h2 class="pill-content">{{ l.value }}</h2>
